@@ -1,0 +1,21 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+dist/
+
+# Data is rebuilt by the pipeline (raw downloads and processed outputs)
+data/raw/*
+data/processed/*
+!data/raw/manifest.json
+
+# Editors / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

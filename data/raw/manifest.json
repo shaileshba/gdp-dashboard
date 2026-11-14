@@ -1,0 +1,37 @@
+{
+  "maddison": {
+    "file": "mpd2023_web.xlsx",
+    "url": "https://dataverse.nl/api/access/datafile/421302",
+    "bytes": 4903804,
+    "sha256": "ecc5916ca12789b983fc4be437f8a354bbf4291323605324ac3e0aea4c57cbb6",
+    "downloaded_at": "2026-11-14T08:47:40+00:00"
+  },
+  "pwt": {
+    "file": "pwt110.xlsx",
+    "url": "https://dataverse.nl/api/access/datafile/554105",
+    "bytes": 5839841,
+    "sha256": "7b337e94f39dfe304bc459e433f8ce0624496c812707ae0c924888f5142b3ab3",
+    "downloaded_at": "2026-11-14T08:47:40+00:00"
+  },
+  "wpp": {
+    "file": "WPP2024_Demographic_Indicators_Medium.csv.gz",
+    "url": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_Demographic_Indicators_Medium.csv.gz",
+    "bytes": 16557272,
+    "sha256": "286ac36bb1415e2e1ade03acfef0a29f0e4c087e2f78e38c48f50c5df89082bc",
+    "downloaded_at": "2026-11-14T08:47:40+00:00"
+  },
+  "wdi_countries": {
+    "file": "wdi_countries.csv",
+    "url": "https://api.worldbank.org/v2/country",
+    "bytes": 18895,
+    "sha256": "2d53f0c22ab23d286f571ff0144391e8689b98301feafe63ca3fb4e3b9220a85",
+    "downloaded_at": "2026-11-14T08:47:41+00:00"
+  },
+  "wdi_gdp": {
+    "file": "wdi_gdp.csv",
+    "url": "https://api.worldbank.org/v2/ NY.GDP.PCAP.PP.KD, NY.GDP.MKTP.PP.KD",
+    "bytes": 323738,
+    "sha256": "856712316b13a3f05933e76250924a8ebf3fd46bde1447bc2a862a3a74fd225e",
+    "downloaded_at": "2026-11-14T08:49:36+00:00"
+  }
+}
