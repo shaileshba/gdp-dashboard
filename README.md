@@ -4,7 +4,8 @@
 100 years. You adjust the drivers of growth (population, investment, education, technology,
 catch-up speed, trade, climate) country by country or for whole groups of countries.
 
-**Status:** Milestone 1 of 7 done: the joined history dataset. See [docs/plan.md](docs/plan.md).
+**Status:** Milestones 1-2 of 7 done: the joined history dataset and the history dashboard.
+See [docs/plan.md](docs/plan.md).
 
 ## Folder layout
 
@@ -12,16 +13,38 @@ catch-up speed, trade, climate) country by country or for whole groups of countr
 |---|---|
 | `pipeline/` | Python code that downloads public data and builds the history dataset |
 | `gdpsim/` | *(next)* the growth model, as a Python package |
-| `api/` | *(next)* FastAPI web server that runs the model for the dashboard |
-| `app/` | *(next)* React dashboard |
+| `api/` | FastAPI web server: serves the data, and the built dashboard |
+| `app/` | React + TypeScript dashboard (map, time series, share of world, rankings) |
 | `notebooks/` | Jupyter notebooks for calibration and analysis |
 | `docs/` | Plan, method notes, and the data quality report |
 | `data/raw/` | Downloaded files, exactly as published (not saved in Git) |
 | `data/processed/` | Cleaned Parquet files built by the pipeline (not saved in Git) |
 
+## Running the dashboard
+
+The data must be built first (see *Getting started* below).
+
+```powershell
+cd C:\Users\shail\workbench\gdp-dashboard
+cd app; npm install; npm run build; cd ..   # one-off, and again after changing code in app/
+uv run python -m api                        # then open http://127.0.0.1:8000
+```
+
+Stop it with Ctrl+C. Options: `--port 8080`, and `--reload` to restart when Python code changes.
+API docs are at http://127.0.0.1:8000/docs. The address bar keeps the current view
+(e.g. `?year=1820&metric=gdp&group=income_group&c=CHN,IND,GBR`), so views can be bookmarked.
+
+**While editing the dashboard code**, use two terminals for instant reloads:
+
+```powershell
+uv run python -m api          # terminal 1: data server on port 8000
+cd app; npm run dev           # terminal 2: open the address it prints (http://localhost:5173)
+```
+
 ## Getting started
 
-You need Git, Python 3.12 (from python.org) and [uv](https://docs.astral.sh/uv/).
+You need Git, Python 3.12 (from python.org), [uv](https://docs.astral.sh/uv/) and
+[Node.js](https://nodejs.org/) (for the dashboard).
 
 ```powershell
 cd C:\Users\shail\workbench\gdp-dashboard
@@ -30,7 +53,7 @@ cd pipeline
 uv run python -m gdp_pipeline              # download all data and build (a few minutes)
 uv run python -m gdp_pipeline build        # rebuild only, using files already downloaded
 cd ..
-uv run pytest                              # run the tests
+uv run pytest                              # run the tests (pipeline and API)
 ```
 
 The build writes `data/processed/*.parquet` and refreshes

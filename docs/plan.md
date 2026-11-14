@@ -32,7 +32,7 @@ the baseline aligned to SSP2. SSP1-5 come as presets. Monte Carlo runs give unce
 ## Milestones
 
 1. ✅ **Data foundation:** downloads, joined 1500-2025 history, quality labels, report
-2. **History dashboard:** map, time series, share of world GDP, rankings (React + FastAPI)
+2. ✅ **History dashboard:** map, time series, share of world GDP, rankings (React + FastAPI)
 3. **Model:** `gdpsim` calibrated and back-tested, SSP presets
 4. **Levers:** global/group/country settings, lever paths, grid editor, bulk group edits
 5. **Scenarios and analysis:** save, compare, diff, growth accounting, tornado charts, Monte Carlo ranges

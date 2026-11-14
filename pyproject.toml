@@ -9,21 +9,27 @@ dependencies = [
     "duckdb>=1.1",
     "openpyxl>=3.1",
     "requests>=2.32",
+    "fastapi>=0.162.7",
+    "uvicorn>=0.54.0",
 ]
 
 [dependency-groups]
-dev = ["pytest>=8", "ruff>=0.6"]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=8",
+    "ruff>=0.6",
+]
 
 [tool.uv]
 package = false
 
 [tool.pytest.ini_options]
-testpaths = ["pipeline/tests"]
-pythonpath = ["pipeline"]
+testpaths = ["pipeline/tests", "api/tests"]
+pythonpath = ["pipeline", "."]
 
 [tool.ruff]
 line-length = 120
-src = ["pipeline"]
+src = ["pipeline", "."]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP"]
